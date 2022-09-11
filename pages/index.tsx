@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import PostList from "../components/PostList/PostList";
-import { useQuery } from "react-query";
+import type { GetStaticProps, GetStaticPaths } from "next";
+import { useQuery, QueryClient, dehydrate } from "react-query";
 
 // const posts = [
 //   {
@@ -45,7 +46,7 @@ function PostPage() {
     data: posts,
     isLoading,
     isError,
-  } = useQuery(["fetchPosts", fetchPosts()]);
+  } = useQuery(["getPosts"], () => fetchPosts());
 
   return <PostList posts={posts} />;
 }
