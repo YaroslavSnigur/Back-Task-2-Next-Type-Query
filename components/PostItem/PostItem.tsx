@@ -3,7 +3,6 @@ import classes from "./PostItem.module.css";
 
 interface PostItemProps {
   title: string;
-  content: string;
   description: string;
   date: string;
   authors: string[];
@@ -12,7 +11,6 @@ interface PostItemProps {
 
 const PostItem = ({
   title,
-  content,
   description,
   date,
   authors,

@@ -7,7 +7,6 @@ function PostList(props: any) {
       {props.posts.map((post: any) => (
         <PostItem
           key={post.id}
-          content={post.content}
           title={post.title}
           description={post.description}
           date={post.createdAt}
